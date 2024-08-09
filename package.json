@@ -1,0 +1,31 @@
+{
+  "name": "lysto-orbit-bridge-ui",
+  "private": true,
+  "license": "Apache-2.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "yarn workspace lysto-orbit-bridge dev",
+    "build": "yarn workspace lysto-orbit-bridge build",
+    "start": "yarn build && yarn workspace lysto-orbit-bridge start",
+    "audit:ci": "audit-ci --config ./audit-ci.jsonc",
+    "test:ci": "yarn workspace lysto-orbit-bridge test:ci",
+    "test:e2e": "yarn workspace lysto-orbit-bridge e2e:run --browser chrome",
+    "test:ci:e2e": "start-server-and-test 'yarn build && yarn workspace lysto-orbit-bridge start' http-get://localhost:3000 'env-cmd -f ./packages/lysto-orbit-bridge/.e2e.env synpress run --project ./packages/lysto-orbit-bridge --configFile synpress.config.ts'",
+    "test:ci:e2e:install": "yarn workspace lysto-orbit-bridge e2e:install",
+    "test:e2e:cctp": "yarn workspace lysto-orbit-bridge e2e:run:cctp",
+    "prettier:check": "./node_modules/.bin/prettier --check .",
+    "prettier:format": "./node_modules/.bin/prettier --write .",
+    "lint": "yarn workspace lysto-orbit-bridge lint",
+    "lint:fix": "yarn workspace lysto-orbit-bridge lint:fix"
+  },
+  "keywords": [],
+  "author": "",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "audit-ci": "^6.3.0"
+  }
+}
