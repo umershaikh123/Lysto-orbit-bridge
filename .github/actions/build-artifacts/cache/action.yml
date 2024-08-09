@@ -8,5 +8,5 @@ runs:
       uses: actions/cache/save@v3
       with:
         path: |
-          ./packages/complere-bridge-ui/build
+          ./packages/lysto-orbit-bridge/build
         key: build-artifacts-${{ github.run_id }}

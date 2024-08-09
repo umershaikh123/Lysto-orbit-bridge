@@ -9,7 +9,7 @@ module.exports = {
   extends: `${synpressPath}/.eslintrc.js`,
   parserOptions: {
     project: path.resolve(
-      './packages/complere-bridge-ui/tests/e2e/tsconfig.json'
+      './packages/lysto-orbit-bridge/tests/e2e/tsconfig.json'
     )
   },
   rules: {
